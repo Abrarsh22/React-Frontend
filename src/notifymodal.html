@@ -1,0 +1,109 @@
+<style>
+#notifymodal
+{
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+}
+
+#collection-modal-content {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.close-button-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.productDetails{
+  display:none
+}
+.formbuilder-form{
+  max-height:100% !important;
+}
+.form-container {
+  width: 100%;
+  max-width: 600px; /* Set the desired form width */
+  margin: 0 auto; /* Center the form horizontally */
+  background-color: #ffffff;
+  border: 1.5px solid #000000;
+  max-height: 100%;
+  overflow-y: scroll;
+  position: relative;
+}
+#form-elements-container{
+  position:relative
+}
+.close-button-container{
+  position:absolute;
+  top:2px;
+  right:0;
+  padding:5px;
+}
+#collection-close-button{
+  color: grey;
+    font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 25px;
+  height: auto;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  top: -1px;
+  z-index: 999; 
+}
+
+#collection-close-button:hover {
+color: #ddab24;
+}
+</style>
+
+  <div class="notify-modal" id="notifymodal" onsubmit="submitForm(event)">
+  <div id="collection-modal-content">
+  <div class="productDetails">
+  <h4 class="ptitle">{{ product.title }}</h4>
+  <h4 class="pid">{{ product.id }}</h4>
+  <h4 class="pavailability">{{ product.available }}</h4>
+  </div>
+  <div id="form-elements-container">
+  <div class="close-button-container">
+  <span id="collection-close-button">X</span>
+</div>
+  <!-- The container for form elements populated dynamically -->
+  </div>
+  </div>
+  </div>
+  
+  
+<script>
+  var notifymodal= document.getElementById("notifymodal");
+  document.addEventListener("DOMContentLoaded", function () {
+    var closeButton = document.querySelector("#collection-close-button");
+    var rfbForm = document.querySelector(".formbuilder-form"); // Use .formbuilder-form
+
+    closeButton.addEventListener('click', () => {
+      notifymodal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target == notifymodal) {
+        notifymodal.style.display = 'none';
+      }
+    });
+  });
+</script>`;

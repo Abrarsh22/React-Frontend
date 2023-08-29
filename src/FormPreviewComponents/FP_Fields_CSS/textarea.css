@@ -1,0 +1,23 @@
+.rfb-fields_textarea {
+  text-align: left !important;
+  display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  
+  .rfb-fields_textarea label {
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+  }
+  
+  .rfb-fields_textarea textarea {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 0.2rem;
+  }
+  
+  .rfb-fields_textarea span {
+    color: #353535;
+    font-size: 13px;
+  }
